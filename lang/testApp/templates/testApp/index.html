@@ -1,3 +1,11 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block date-block %}
+  <div>{{date}}</div>
+{% endblock date-block %}
+
+{% block test-container %}
 <h2>Hello, Django! </h2>
 <p>Test! </p>
 <p>Test! </p>
@@ -5,3 +13,5 @@
 <p>Test! </p>
 <p>Test! </p>
 <p>Test! </p>
+
+{% endblock test-container %}

@@ -4,4 +4,5 @@ from . import views
 
 urlpatterns = [
     path('index/', views.index),
+    path('menu/<str:word>/', views.word_detail),
 ]
