@@ -1,5 +1,18 @@
 {% load static %}
-<h2>{{name}}</h2>
-<div>and banana</div>
-<img src={% get_static_prefix %}{{img_path}}>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestApp</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href={% static 'foods/css/styles.css' %}>
+</head>
+<body>
+    
+    <h2>{{user.name}}</h2>
+    <div>{{user.nation}}</div>
+    <img src={% get_static_prefix %}{{img_path}}>
+    <a href='testApp/menu'></a>
+
+</body>
+</html>

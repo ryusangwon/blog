@@ -6,12 +6,14 @@
 {% endblock date-block %}
 
 {% block test-container %}
-<h2>Hello, Django! </h2>
-<p>Test! </p>
-<p>Test! </p>
-<p>Test! </p>
-<p>Test! </p>
-<p>Test! </p>
-<p>Test! </p>
-
+  {% for user in users %}
+    <div class='test-container'>
+      <div class='info'>
+        <h3>{{user.name}}</h3>
+        <p>{{user.nation}}</p>
+        <p>{{user.age}}</p>
+        <a href={{user.id}}>리스트 보기</a>
+      </div>
+    </div>
+    {% endfor %}
 {% endblock test-container %}
