@@ -2,23 +2,23 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime
 from django.http import Http404
-from testApp.models import User
+from .models import User
 from .forms import UserForm
 
 # Create your views here.
 
-def index(request):
+def user_list(request):
     #return HttpResponse('<h2> Hello, World! </h2>')
     context = dict()
     today = datetime.today().date()
     users = User.objects.all()
     context = {'date':today}
     context['users'] = users
-    return render(request, 'testApp/index.html', context=context)
+    return render(request, 'testApp/list.html', context=context)
 
-def user_detail(request, pk):
+def user_detail(request, user_id):
     context = dict()
-    user = User.objects.get(id=pk)
+    user = User.objects.get(id=user_id)
     context['user'] = user
     return render(request, 'testApp/detail.html', context=context)
 

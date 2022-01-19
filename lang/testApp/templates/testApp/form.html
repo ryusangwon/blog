@@ -1,6 +1,5 @@
-<form, method='post'>{% csrf_token %}
+<form method='post'>{% csrf_token %}
     {{form.as_ul}}
     <input type='submit' value='전송'>
-    
 </form>
-<a href={% url 'index' %}>취소</a>
+<a href={% url 'user-list' %}>취소</a>

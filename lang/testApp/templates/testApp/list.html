@@ -5,6 +5,12 @@
   <div>{{date}}</div>
 {% endblock date-block %}
 
+{% block content %}
+<div class='btn_new'>
+<a href={% url 'user-create' %}>추가</a>
+</div>
+
+{% endblock content %}
 {% block test-container %}
   {% for user in users %}
     <div class='test-container'>
@@ -16,10 +22,3 @@
     {% endfor %}
 {% endblock test-container %}
 
-{% block content %}
-<div class='btn_new'>
-<a href={% url 'user-create' %}>추가</a>
-</div>
-
-
-{% endblock content %}
