@@ -1,5 +1,2 @@
-### django project
-
-### with NLP, Oracle server
-
+#### django project
 pythonanywhere을 통해 배포
