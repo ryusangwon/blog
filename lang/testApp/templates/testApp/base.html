@@ -4,20 +4,30 @@
 <head>
   <title>Index</title>
   <meta charset="utf-8">
+  {% block css %}
+  {% endblock css %}
   <link rel="stylesheet" href={% static 'foods/css/styles.css' %}>
 </head>
 <body>
+  <h3>
+    {% block header %}
+    {% endblock header %}
+  </h3>
   <div> 
       {% block date-block %}
       {% endblock date-block %}
  </div>
   <hr/>
-
-  <h1>Name list</h1>
   
   <div class="test-container">
       {% block test-container %}
       {% endblock test-container %}
   </div>
+
+  <div id='content'>
+    {% block content %}
+    {% endblock content %}
+  </div>
+
 </body>
 </html>
