@@ -7,7 +7,7 @@ from .forms import UserForm
 
 # Create your views here.
 def index(request):
-    return redirect('user_list')
+    return redirect('user-list')
 
 def user_list(request):
     #return HttpResponse('<h2> Hello, World! </h2>')
