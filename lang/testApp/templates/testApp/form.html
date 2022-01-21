@@ -1,5 +1,20 @@
-<form method='post'>{% csrf_token %}
-    {{form.as_ul}}
-    <input type='submit' value='전송'>
-</form>
-<a href={% url 'user-list' %}>취소</a>
+{% extends './base.html' %}
+{% load static %}
+
+{% block css %}
+{% endblock css %}
+
+{% block header %}
+    <h3>정보 입력</h3>
+{% endblock header %}
+
+
+
+{% block content %}
+    <form method='post'>{% csrf_token %}
+        {{form.as_ul}}
+        <input type='submit' value='전송'>
+    </form>
+    <a href={% url 'user-list' %}>취소</a>
+{% endblock content %}
+
