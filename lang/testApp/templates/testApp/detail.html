@@ -9,6 +9,19 @@
   <p>상세 보기</p>
 {% endblock header %}
 
+{% block content %}
+<div class='content'>
+  <div class='btn'>
+    <div class='btn_list'><a href='{% url 'user-list' %}>목록</a></div>
+    <div class='btn_crud'>
+      <div class='btn_update'><a href='{% url 'user-update' %}></a></div>
+      <div class='btn_delete'><a href='{% url 'user-delete' %}></a></div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
 {% block test-container %}
   <h2>{{user.name}}</h2>
   <div>{{user.nation}}  {{user.age}}</div>

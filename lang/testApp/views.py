@@ -33,3 +33,22 @@ def user_create(request):
     else:
         user_form = UserForm()
     return render(request, 'testApp/form.html', {'form':user_form})
+
+def user_update(request, user_id):
+    user = User.objects.get(id=user_id)
+    if request.method=='POST':
+        user_form = UserForm(request.POST, instance=user)
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('user-detail', user_id=user.id)
+    else:
+        user_form = UserForm(instance=user)
+    return render(request, 'testApp/form.html', {'form':'user_form'})
+
+def user_delete(request, user_id):
+    user = User.objects.get(id=user_id)
+    if request.method=='POST':
+        user.delete()
+        return redirect('post-list')
+    else:
+        return render(request, 'testApp/confirm_delete.html', {'user':user})
