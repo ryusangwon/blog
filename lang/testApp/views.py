@@ -49,6 +49,6 @@ def user_delete(request, user_id):
     user = User.objects.get(id=user_id)
     if request.method=='POST':
         user.delete()
-        return redirect('post-list')
+        return redirect('user-list')
     else:
         return render(request, 'testApp/confirm_delete.html', {'user':user})

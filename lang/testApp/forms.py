@@ -9,6 +9,12 @@ class UserForm(forms.ModelForm):
         model = User
         #fields = '__all__'
         fields = ['name', 'nation', 'age']
-        widgets = {'name':forms.TextInput(attrs={'class':'name', 'placeholder':'이름을 입력하세요'}),
-                   'nation':forms.Textarea(attrs={'국적을 입력하세요'}),
-                   'age':forms.TextInput(attrs={'placeholder':'나이를 입력하세요'})}
+        widgets = {'name':forms.TextInput(attrs={'placeholder':'이름 입력'}),
+                   'nation':forms.TextInput(attrs={'placeholder':'국적 입력'}),
+                   'age':forms.TextInput(attrs={'placeholder':'나이 입력'})}
+        
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        if '*' in name:
+            raise ValidationError('*는 포함될 수 없음')
+        return name

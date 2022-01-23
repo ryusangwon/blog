@@ -8,12 +8,25 @@
     <h3>정보 입력</h3>
 {% endblock header %}
 
-
-
 {% block content %}
     <form method='post'>{% csrf_token %}
-        {{form.as_ul}}
-        <input type='submit' value='전송'>
+        <div><input type='submit' value='전송'></div>
+        <div>
+            <p>{{form.name}}</p>
+            {% for error in form.name.errors %}
+                <p class='error'>{{error}}</p>
+            {% endfor %}
+
+            <p>{{form.nation}}</p>
+            {% for error in form.nation.errors %}
+                <p class='error'>{{error}}</p>
+            {% endfor %}
+
+            <p>{{form.age}}</p>
+            {% for error in form.age.errors %}
+                <p class='error'>{{error}}</p>
+            {% endfor %}
+        </div>
     </form>
     <a href={% url 'user-list' %}>취소</a>
 {% endblock content %}
